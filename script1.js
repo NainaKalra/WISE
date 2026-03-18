@@ -21,7 +21,6 @@ function closeEventDetails() {
     document.getElementById('eventModal').style.display = 'none';
 }
 
-// Bahar click karne pe band ho jaye
 window.onclick = function (event) {
     const modal = document.getElementById('eventModal');
     if (event.target == modal) {
