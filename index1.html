@@ -18,10 +18,13 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+    <head>
+        <link href="https://db.onlinewebfonts.com/c/978e3845b045b2e6a058988930c64d27?family=Cochin" rel="stylesheet">
+    </head>
+
 </head>
 
 <body>
-
     <header>
 
         <div class="logo">
@@ -34,7 +37,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#events">Events</a></li>
-                <li><a href="#board">Board</a></li>
+                <li><a href="#advisors">Our Team</a></li>
             </ul>
         </nav>
 
@@ -51,8 +54,8 @@
 
         <div class="hero-text">
             <h2 class="hero-title">
-            <span class="drop-cap">W</span>omen in<br>
-            Science & Engineering
+                <span class="drop-cap">W</span>omen in<br>
+                Science & Engineering
             </h2>
             <p class="hero-subtitle cursive-font">Empowering women to innovate, lead, and succeed in STEM.</p>
             <button onclick="window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=cvPbxhGFD0adj4Y9glajfRobZv2oAvhKmXcyBWLUlF9UNzQ0VDdVUktET1A4STc3UThFU1VIQzNHVCQlQCN0PWcu', '_blank')">Join WISE</button>
@@ -64,112 +67,174 @@
 
     <!-- ABOUT -->
 
-<section id="about" class="about">
-    <div class="about-container">
-        <div class="about-card">
-            <h2 class="about-title">
-                About <span class="w-letter">W</span><span class="ise-letters">ISE</span>
-            </h2>
-            <div class="underline"></div>
-            <p class="about-text">
-                Women in Science and Engineering (WISE) is a student organization at Indiana Tech dedicated to
-                supporting and empowering women pursuing careers in STEM. Through mentorship, collaborative
-                projects, workshops, and networking opportunities, WISE creates a welcoming community.
-            </p>
-        </div>
-    </div>
-</section>
+    <section id="about" class="about">
+        <div class="about-container">
 
-<section id="events" class="events-section">
-    <div class="calendar-container">
-        <div class="calendar-header">
-            <div class="month-selector">
-                <div id="currentMonthDisplay" class="month-btn" onclick="toggleMonthList()">
-                    March 2026 <span>⌄</span>
-                </div>
-                <div id="monthList" class="month-dropdown-content">
-                    <div onclick="selectMonth(0, 2026)">January 2026</div>
-                    <div onclick="selectMonth(1, 2026)">February 2026</div>
-                    <div onclick="selectMonth(2, 2026)">March 2026</div>
-                    <div onclick="selectMonth(3, 2026)">April 2026</div>
-                    <div onclick="selectMonth(4, 2026)">May 2026</div>
-                    <div onclick="selectMonth(5, 2026)">June 2026</div>
-                    <div onclick="selectMonth(6, 2026)">July 2026</div>
-                    <div onclick="selectMonth(7, 2026)">August 2026</div>
-                    <div onclick="selectMonth(8, 2026)">September 2026</div>
-                    <div onclick="selectMonth(9, 2026)">October 2026</div>
-                    <div onclick="selectMonth(10, 2026)">November 2026</div>
-                    <div onclick="selectMonth(11, 2026)">December 2026</div>
-                </div>
-            </div>
-            <h2 class="calendar-main-title"><span class="w-letter">O</span>UR EVENTS</h2>
-            <div style="width: 150px;"></div>
-        </div>
-
-        <div class="calendar-grid">
-            <div class="day-name">Sun</div>
-            <div class="day-name">Mon</div>
-            <div class="day-name">Tue</div>
-            <div class="day-name">Wed</div>
-            <div class="day-name">Thu</div>
-            <div class="day-name">Fri</div>
-            <div class="day-name">Sat</div>
-
-            <div class="date-cell"></div>
-            <div class="date-cell">1</div>
-            <div class="date-cell">2</div>
-            <div class="date-cell">3</div>
-            <div class="date-cell">4</div>
-            <div class="date-cell">5</div>
-            <div class="date-cell">6</div>
-            <div class="date-cell">7</div>
-            <div class="date-cell">8</div>
-            <div class="date-cell">9</div>
-            <div class="date-cell">10</div>
-            <div class="date-cell">11</div>
-            <div class="date-cell">12</div>
-            <div class="date-cell">13</div>
-            <div class="date-cell">14</div>
-            <div class="date-cell">15</div>
-            <div class="date-cell">16</div>
-            <div class="date-cell">17</div>
-            <div class="date-cell">18</div>
-
-            <div class="date-cell has-event" onclick="showEventDetails()">
-                19
-                <div class="event-pill">Monthly Event</div>
+            <div class="about-card">
+                <h2 class="about-title">About <span class="w-letter">W</span><span class="ise-letters">ISE</span></h2>
+                <div class="underline"></div>
+                <p class="about-text">
+                    Women in Science and Engineering (WISE) is a student organization at Indiana Tech dedicated to
+                    supporting and empowering women pursuing careers in STEM. Through mentorship, collaborative
+                    projects, workshops, and networking opportunities, WISE creates a welcoming community.
+                </p>
             </div>
 
-            <div class="date-cell">20</div>
-            <div class="date-cell">21</div>
-            <div class="date-cell">22</div>
-            <div class="date-cell">23</div>
-            <div class="date-cell">24</div>
-            <div class="date-cell">25</div>
-            <div class="date-cell">26</div>
-            <div class="date-cell">27</div>
-            <div class="date-cell">28</div>
-            <div class="date-cell">29</div>
-            <div class="date-cell">30</div>
-            <div class="date-cell">31</div>
-        </div>
-    </div>
+            <div class="wwd-area">
+                <h2 class="wwd-main-title">What Makes Us <span class="w-letter">Special</span></h2>
+                <div class="wwd-grid">
+                    <div class="wwd-card">
+                        <div class="wwd-icon">🤝</div>
+                        <h3>Networking</h3>
+                        <p>Building strong connections with industry professionals.</p>
+                    </div>
+                    <div class="wwd-card">
+                        <div class="wwd-icon">💡</div>
+                        <h3>Mentorship</h3>
+                        <p>Guidance from seniors and faculty to navigate STEM.</p>
+                    </div>
+                    <div class="wwd-card">
+                        <div class="wwd-icon">🛠️</div>
+                        <h3>Workshops</h3>
+                        <p>Hands-on sessions to master technical tools.</p>
+                    </div>
+                </div>
+            </div>
 
-    <div id="eventModal" class="event-modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeEventDetails()">&times;</span>
-            <span class="tag">Monthly</span>
-            <h3>Theme-WISE Event</h3>
-            <p><strong>Time:</strong> 19 Mar 2026, 11:00 am</p>
-            <p><strong>Location:</strong> Snyder Academic Center, Room 242</p>
-            <button class="hero-button-small">Details</button>
+            <div class="special-feature-box">
+                <span class="special-tag">WISE Member Perk</span>
+                <p class="special-text">
+                    At WISE, the members lead the way. Every month, <span class="highlight">WISE members choose their
+                        own
+                        theme</span> for upcoming events!
+                </p>
+            </div>
+
         </div>
-    </div>
-</section>
+    </section>
+
+    <section id="events" class="events-section">
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <div class="month-selector">
+                    <div id="currentMonthDisplay" class="month-btn" onclick="toggleMonthList()">
+                        <span id="monthBtnLabel">May 2026</span> <span class="chevron">⌄</span>
+                    </div>
+                    <!-- Mini Calendar Picker Popup -->
+                    <div id="monthList" class="mini-cal-popup">
+                        <div class="mini-cal-header">
+                            <button class="mini-cal-nav" onclick="miniCalNav(-1, event)">&#8249;</button>
+                            <div class="mini-cal-selects">
+                                <select id="miniMonthSel" onchange="miniCalRender()">
+                                    <option value="0">January</option>
+                                    <option value="1">February</option>
+                                    <option value="2">March</option>
+                                    <option value="3">April</option>
+                                    <option value="4">May</option>
+                                    <option value="5">June</option>
+                                    <option value="6">July</option>
+                                    <option value="7">August</option>
+                                    <option value="8">September</option>
+                                    <option value="9">October</option>
+                                    <option value="10">November</option>
+                                    <option value="11">December</option>
+                                </select>
+                                <select id="miniYearSel" onchange="miniCalRender()">
+                                    <option value="2025">2025</option>
+                                    <option value="2026" selected>2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2030">2030</option>
+                                    <option value="2031">2031</option>
+                                    <option value="2032">2032</option>
+                                    <option value="2033">2033</option>
+                                    <option value="2034">2034</option>
+                                    <option value="2035">2035</option>
+                                    <option value="2036">2036</option>
+                                    <option value="2037">2037</option>
+                                    <option value="2038">2038</option>
+                                    <option value="2039">2039</option>
+                                    <option value="2040">2040</option>
+                                    
+                                </select>
+                            </div>
+                            <button class="mini-cal-nav" onclick="miniCalNav(1, event)">&#8250;</button>
+                        </div>
+                        <div class="mini-cal-days">
+                            <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                        </div>
+                        <div id="miniCalGrid" class="mini-cal-grid"></div>
+                    </div>
+                </div>
+                <h2 class="calendar-main-title"><span class="w-letter">O</span>UR EVENTS</h2>
+                <div style="width: 150px;"></div>
+            </div>
+
+            <div class="calendar-grid">
+                <div class="day-name">Sun</div>
+                <div class="day-name">Mon</div>
+                <div class="day-name">Tue</div>
+                <div class="day-name">Wed</div>
+                <div class="day-name">Thu</div>
+                <div class="day-name">Fri</div>
+                <div class="day-name">Sat</div>
+
+                <div class="date-cell"></div>
+                <div class="date-cell">1</div>
+                <div class="date-cell">2</div>
+                <div class="date-cell">3</div>
+                <div class="date-cell">4</div>
+                <div class="date-cell">5</div>
+                <div class="date-cell">6</div>
+                <div class="date-cell">7</div>
+                <div class="date-cell">8</div>
+                <div class="date-cell">9</div>
+                <div class="date-cell">10</div>
+                <div class="date-cell">11</div>
+                <div class="date-cell">12</div>
+                <div class="date-cell">13</div>
+                <div class="date-cell">14</div>
+                <div class="date-cell">15</div>
+                <div class="date-cell">16</div>
+                <div class="date-cell">17</div>
+                <div class="date-cell">18</div>
+
+                <div class="date-cell has-event" onclick="showEventDetails()">
+                    19
+                    <div class="event-pill">Monthly Event</div>
+                </div>
+
+                <div class="date-cell">20</div>
+                <div class="date-cell">21</div>
+                <div class="date-cell">22</div>
+                <div class="date-cell">23</div>
+                <div class="date-cell">24</div>
+                <div class="date-cell">25</div>
+                <div class="date-cell">26</div>
+                <div class="date-cell">27</div>
+                <div class="date-cell">28</div>
+                <div class="date-cell">29</div>
+                <div class="date-cell">30</div>
+                <div class="date-cell">31</div>
+            </div>
+        </div>
+
+        <div id="eventModal" class="event-modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeEventDetails()">&times;</span>
+                <span class="tag">Monthly</span>
+                <h3>Theme-WISE Event</h3>
+                <p><strong>Time:</strong> 19 Mar 2026, 11:00 am</p>
+                <p><strong>Location:</strong> Snyder Academic Center, Room 242</p>
+                <button class="hero-button-small">Details</button>
+            </div>
+        </div>
+    </section>
 
     <!-- ADVISORS -->
 
-    <section class="advisors">
+    <section id="advisors" class="advisors">
 
         <h2>Our Advisors</h2>
 
@@ -177,19 +242,19 @@
 
             <div class="member">
                 <img src="prof1.jpg">
-                <h3>Dr. Anna Nagle</h3>
+                <h3 class="memberHeading">Dr. Anna Nagle</h3>
                 <p>Biomedical Engineering</p>
             </div>
 
             <div class="member">
                 <img src="prof2.jpg">
-                <h3>Dr. Yun Su</h3>
+                <h3 class="memberHeading">Dr. Yun Su</h3>
                 <p>Mathematics</p>
             </div>
 
             <div class="member">
                 <img src="prof3.jpg">
-                <h3>Dr. Xin Wang</h3>
+                <h3 class="memberHeading">Dr. Xin Wang</h3>
                 <p>Computer Science</p>
             </div>
 
@@ -208,25 +273,25 @@
 
             <div class="member">
                 <img src="member1.png">
-                <h3>Naina Kalra</h3>
+                <h3 class="memberHeading">Naina Kalra</h3>
                 <p>President</p>
             </div>
 
             <div class="member">
                 <img src="member2.jpg">
-                <h3>Maria Bacchetta</h3>
+                <h3 class="memberHeading">Maria Bacchetta</h3>
                 <p>Vice President</p>
             </div>
 
             <div class="member">
                 <img src="member3.png">
-                <h3>Tayler Staples </h3>
+                <h3 class="memberHeading">Tayler Staples </h3>
                 <p>Secretary</p>
             </div>
-
+            
             <div class="member">
                 <img src="member4.png">
-                <h3>Angelica Flores</h3>
+                <h3 class="memberHeading">Angelica Flores</h3>
                 <p>Treasurer</p>
             </div>
 
@@ -240,7 +305,7 @@
         <p>© 2026 Women in Science and Engineering | Indiana Tech</p>
 
     </footer>
-<script src="script1.js"></script>
+    <script src="script1.js"></script>
 </body>
 
 </html>
