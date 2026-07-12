@@ -1,8 +1,48 @@
-// --- MINI CALENDAR PICKER ---
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-const eventDates = {
-    "2026-2-19": { title: "Theme-WISE Event", time: "19 Mar 2026, 11:00 am", location: "Snyder Academic Center, Room 242" },
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDO5-7oISbCWwLHeNi2yRhLelqNFTL45xc",
+    authDomain: "wise-events-34f8e.firebaseapp.com",
+    projectId: "wise-events-34f8e",
+    storageBucket: "wise-events-34f8e.firebasestorage.app",
+    messagingSenderId: "287361146109",
+    appId: "1:287361146109:web:bb9a13c00deb1bd7107294",
+    measurementId: "G-TTNQDD6CPE"
 };
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+//  EVENT DATA — from Firebase 
+
+let eventDates = {};
+async function loadEvents() {
+    try {
+        const snapshot = await getDocs(collection(db, "Events"));
+        eventDates = {};
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            const rawDate = data.Date || data.date; // e.g. "2026-8-16"
+            const parts = rawDate.split("-");
+            const y = parseInt(parts[0]);
+            const m = parseInt(parts[1]) - 1; // convert to zero-indexed month
+            const d = parseInt(parts[2]);
+            const key = `${y}-${m}-${d}`;
+            eventDates[key] = {
+                title: data.Title || data.title || data["Title "] || data["title "],
+                time: data.Time || data.time,
+                location: data.Location || data.location
+            };
+        });
+        renderMainCalendar(currentMonth, currentYear);
+        miniCalRender();
+    } catch (err) {
+        console.error("Events not loaded:", err);
+    }
+}
+
+//Calender 
 
 const today = new Date();
 let currentMonth = today.getMonth();
@@ -11,9 +51,9 @@ const MONTHS = ["January", "February", "March", "April", "May", "June", "July", 
 
 document.addEventListener('DOMContentLoaded', () => {
     syncMiniSelects(currentMonth, currentYear);
-    miniCalRender();
-    renderMainCalendar(currentMonth, currentYear);
     updateMonthBtnLabel(currentMonth, currentYear);
+    renderMainCalendar(currentMonth, currentYear);
+    loadEvents();
 });
 
 function toggleMonthList() {
@@ -130,7 +170,7 @@ function renderMainCalendar(month, year) {
         if (isToday) cell.style.background = '#e8daef';
         if (eventDates[key]) {
             cell.classList.add('has-event');
-            cell.innerHTML = d + '<div class="event-pill">Monthly Event</div>';
+            cell.innerHTML = d + '<div class="event-pill">' + eventDates[key].title + '</div>';
             const capturedKey = key;
             cell.onclick = () => showEventDetails(capturedKey);
         } else {
@@ -158,3 +198,8 @@ window.addEventListener('click', function (event) {
     const modal = document.getElementById('eventModal');
     if (event.target === modal) modal.style.display = 'none';
 });
+// Expose functions globally so inline onclick="" attributes can find them
+window.toggleMonthList = toggleMonthList;
+window.miniCalNav = miniCalNav;
+window.showEventDetails = showEventDetails;
+window.closeEventDetails = closeEventDetails;
