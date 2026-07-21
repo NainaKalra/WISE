@@ -323,7 +323,11 @@ section {
 }
 
 .wwd-card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.05);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    aspect-ratio: 1 / 1;
     padding: 28px 20px;
     border-radius: 35px;
     /* Thode zyada rounded corners premium lagte hain */
@@ -333,9 +337,54 @@ section {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
     position: relative;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    /* Bouncy transition */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease, box-shadow 0.4s ease;
     z-index: 1;
+}
+
+.wwd-card-text {
+    width: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px 16px;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, 20%);
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: bottom 0.4s ease, transform 0.4s ease, opacity 0.35s ease;
+}
+
+.wwd-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: white;
+    transform: translateY(100%);
+    transition: transform 0.45s ease;
+    z-index: 1;
+}
+
+.wwd-card:hover::after {
+    transform: translateY(0);
+}
+
+.wwd-card:hover .wwd-card-text {
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Card ke peeche halka sa glow effect hover pe */
@@ -356,7 +405,6 @@ section {
     transform: translateY(-12px) scale(1.02);
     border-color: #b19cd9;
     box-shadow: 0 25px 50px rgba(177, 156, 217, 0.15);
-    background: #ffffff;
 }
 
 .wwd-card:hover::before {
@@ -378,16 +426,27 @@ section {
 
 .wwd-card h3 {
     font-size: 1.5rem;
-    color: #1a3c5a;
+    color: whitesmoke;
     margin-bottom: 12px;
     font-weight: 700;
+    transition: color 0.4s ease;
 }
 
 .wwd-card p {
     font-size: 1rem;
-    color: #666;
+    color: whitesmoke;
     line-height: 1.6;
+    transition: color 0.4s ease;
 }
+
+.wwd-card:hover h3 {
+    color: #1a3c5a;
+}
+
+.wwd-card:hover p {
+    color: #666;
+}
+
 
 /* Special Feature Box ko thoda aur sleek banaya */
 .special-feature-box {
@@ -476,11 +535,13 @@ section {
 }
 
 .calendar-main-title {
-    font-family: 'Notable', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #f3effa;
-    letter-spacing: 10px;
-    font-size: 2.8rem;
+    /*letter-spacing: 10px;*/
     text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
 }
 
 .month-btn-glass {
