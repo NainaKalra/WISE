@@ -926,6 +926,7 @@ footer {
     color: #fcfaf7;
     font-size: 0.9rem;
 }
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -1022,158 +1023,225 @@ footer {
         color: white !important;
         line-height: 1.1;
     }
+
     .about-title {
-    font-size: 2rem;
+        font-size: 2rem;
     }
 
     .about-text {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    text-align: left;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        text-align: left;
     }
 
     .about-card {
-    padding: 30px 20px;
+        padding: 30px 20px;
     }
+
     .drop-cap {
         font-size: 3.5rem;
         line-height: 0.85;
     }
+
     .hero-video {
-            width: 100%;
-            object-position: 47% center;
+        width: 100%;
+        object-position: 47% center;
     }
+
     .hero-text {
-            max-width: 60%;
+        max-width: 60%;
     }
+
     .hero-subtitle.cursive-font {
         font-size: 1rem;
         color: rgba(255, 255, 255, 0.9);
     }
+
     .wwd-grid {
-            grid-template-columns: 1fr;
-            gap: 15px;
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
-    
+
     .wwd-card {
-            aspect-ratio: 16 / 9;
-            background-size: cover !important;
-            background-position: center !important;
-            justify-content: center;
-            align-items: center;
+        aspect-ratio: 16 / 9;
+        background-size: cover !important;
+        background-position: center !important;
+        justify-content: center;
+        align-items: center;
     }
-    
+
     .wwd-card::after {
-            display: none;
+        display: none;
     }
-    
+
     .wwd-card-text {
-            position: relative;
-            left: unset;
-            bottom: unset;
-            transform: none;
-            opacity: 1;
-            visibility: visible;
-            background: rgba(255, 255, 255, 0.88);
-            border-radius: 12px;
-            padding: 10px 16px;
-            width: 80%;
+        position: relative;
+        left: unset;
+        bottom: unset;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        background: rgba(255, 255, 255, 0.88);
+        border-radius: 12px;
+        padding: 10px 16px;
+        width: 80%;
     }
-    
+
     .wwd-card h3 {
-            color: #1a3c5a !important;
-            font-size: 1.1rem;
-            margin-bottom: 4px;
+        color: #1a3c5a !important;
+        font-size: 1.1rem;
+        margin-bottom: 4px;
     }
-    
+
     .wwd-card p {
-            color: #555 !important;
-            font-size: 0.85rem;
+        color: #555 !important;
+        font-size: 0.85rem;
     }
-    
+
     .wwd-main-title {
-            font-size: 1.6rem;
+        font-size: 1.6rem;
     }
-    
+
     .special-text {
-            font-size: 1rem;
+        font-size: 1rem;
     }
-        .wwd-card .wwd-card-text {
-            opacity: 0;
-            visibility: hidden;
-            position: absolute;
-            left: 50%;
-            bottom: 20px;
-            transform: translate(-50%, 20%);
-            background: rgba(255, 255, 255, 0.92);
-            border-radius: 12px;
-            padding: 10px 16px;
-            width: 80%;
-        }
-    
-        .wwd-card::after {
-            display: block;
-        }
-    
-        .wwd-card.tapped::after {
-            transform: translateY(0);
-        }
-        .wwd-card {
-            aspect-ratio: 4 / 3;
-        }
-    
-        .wwd-card.tapped .wwd-card-text {
-            bottom: 50%;
-            transform: translate(-50%, 50%);
-            opacity: 1;
-            visibility: visible;
-        }
-        .calendar-header {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-    
-        .calendar-main-title {
-            font-size: 2rem;
-            letter-spacing: 0;
-        }
-    
-        .calendar-main-title {
-            text-align: center;
-            width: 100%;
-        }
-        .day-name {
-            padding: 8px 2px;
-            font-size: 0.6rem;
-        }
-    
-        .date-cell {
-            min-height: 55px;
-            padding: 5px 3px;
-            font-size: 0.75rem;
-        }
-    
-        .event-pill {
-            font-size: 0.5rem;
-            padding: 2px 3px;
-        }
+
+    .wwd-card .wwd-card-text {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translate(-50%, 20%);
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 12px;
+        padding: 10px 16px;
+        width: 80%;
+    }
+
+    .wwd-card::after {
+        display: block;
+    }
+
+    .wwd-card.tapped::after {
+        transform: translateY(0);
+    }
+
+    .wwd-card {
+        aspect-ratio: 4 / 3;
+    }
+
+    .wwd-card.tapped .wwd-card-text {
+        bottom: 50%;
+        transform: translate(-50%, 50%);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .calendar-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .calendar-main-title {
+        font-size: 2rem;
+        letter-spacing: 0;
+    }
+
+    .calendar-main-title {
+        text-align: center;
+        width: 100%;
+    }
+
+    .day-name {
+        padding: 8px 2px;
+        font-size: 0.6rem;
+    }
+
+    .date-cell {
+        min-height: 55px;
+        padding: 5px 3px;
+        font-size: 0.75rem;
+    }
+
+    .event-pill {
+        font-size: 0.5rem;
+        padding: 2px 3px;
+    }
+
     .hero::after {
         background: linear-gradient(160deg,
                 rgba(26, 60, 90, 0.78) 0%,
                 rgba(26, 60, 90, 0.50) 60%,
                 rgba(0, 0, 0, 0.1) 100%);
     }
+
     .hero button {
-            padding: 12px 18px;
-            font-size: 0.9rem;
+        padding: 12px 18px;
+        font-size: 0.9rem;
     }
-    
+
     .hero::after {
-            background: linear-gradient(160deg,
-                    rgba(26, 60, 90, 0.85) 0%,
-                    rgba(26, 60, 90, 0.70) 50%,
-                    rgba(26, 60, 90, 0.50) 100%);
+        background: linear-gradient(160deg,
+                rgba(26, 60, 90, 0.85) 0%,
+                rgba(26, 60, 90, 0.70) 50%,
+                rgba(26, 60, 90, 0.50) 100%);
     }
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: #b19cd9;
+}
+
+.footer-email {
+    color: #fcfaf7;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-email:hover {
+    color: #b19cd9;
+}
+
+.footer-right {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
 }
