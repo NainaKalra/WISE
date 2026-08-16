@@ -40,6 +40,7 @@ async function loadEvents() {
     } catch (err) {
         console.error("Events not loaded:", err);
     }
+    console.log("Loaded events:", eventDates);
 }
 
 //Calender 

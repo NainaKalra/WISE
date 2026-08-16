@@ -926,3 +926,55 @@ footer {
     color: #fcfaf7;
     font-size: 0.9rem;
 }
+
+/* Gallery Page Styles */
+main {
+    padding: 100px 5% 40px;
+    max-width: none;
+    margin: 0;
+    text-align: left;
+}
+
+main h1 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #1a3c5a;
+    text-align: left;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    align-items: start;
+    justify-items: start;
+    width: 100%;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+}
+
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
