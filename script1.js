@@ -204,3 +204,23 @@ window.toggleMonthList = toggleMonthList;
 window.miniCalNav = miniCalNav;
 window.showEventDetails = showEventDetails;
 window.closeEventDetails = closeEventDetails;
+
+window.toggleNav = function () {
+    document.querySelector('nav').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('active');
+}
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('nav').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('active');
+    });
+});
+
+// Mobile card tap effect
+if (window.innerWidth <= 1050) {
+    document.querySelectorAll('.wwd-card').forEach(card => {
+        card.addEventListener('click', function () {
+            this.classList.toggle('tapped');
+        });
+    });
+}
