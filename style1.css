@@ -1324,11 +1324,11 @@ main h1 {
 }
 
 .recognition-card {
-    background-image: url('certificate-recognition.jpg');
+    background-image: url('images/certificate-recognition.jpg');
 }
 
 .trailblazer-card {
-    background-image: url('certificate-trailblazer.jpg');
+    background-image: url('images/certificate-trailblazer.jpg');
 }
 
 @media (max-width: 768px) {
